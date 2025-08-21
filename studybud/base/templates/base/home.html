@@ -1,25 +1,52 @@
 {% extends 'main.html' %}
 
+{% load static%}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base/home.css' %}">
+{% endblock style %}
+
 {% block content %}
 <h1>Home Template</h1>
 
-<div>
+<div class="home-container">
 
-    <a href="{% url 'create-room'%}">Create Room</a>
+    <div class="browse">
+        <h3>Browse Topics</h3>
+        <hr>
 
-    <div>
-        {% for room in rooms%}
-        <ul>
-            <span>@{{ room.host.username }}</span>
-            <li>Id : {{ room.id }}, Name : <a href="{% url 'room' room.id%}">{{ room.name }}</a></li>
-            <small>{{ room.topic.name }}</small>
-            <br>
-            <a href="{% url 'update-room' room.id %}">Update</a>
-            <a href="{% url 'delete-room' room.id %}">Delete</a>
-            <hr>
-        </ul>
+        <div>
+            <a href="{% url 'home'%}">All</a>
+        </div>
+
+        {% for topic in topics%}
+            <div>
+                <a href="{% url 'home'%}?q={{topic.name}}">{{topic.name}}</a>
+            </div>
         {% endfor %}
     </div>
+
+    <div class="rooms">
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url 'create-room'%}">Create Room</a>
+
+        <div>
+            {% for room in rooms%}
+            <ul>
+                <span>@{{ room.host.username }}</span>
+                <li>Id : {{ room.id }}, Name : <a href="{% url 'room' room.id%}">{{ room.name }}</a></li>
+                <small>{{ room.topic.name }}</small>
+                <br>
+                {% if request.user == room.host %}
+                <a href="{% url 'update-room' room.id %}">Update</a>
+                <a href="{% url 'delete-room' room.id %}">Delete</a>
+                {% endif %}
+                <hr>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+    
 </div>
 
 

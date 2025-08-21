@@ -1,0 +1,12 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.browse {
+    flex: 1 1 auto;
+}
+
+.rooms {
+    flex: 3 3 auto;
+}

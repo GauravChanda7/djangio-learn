@@ -1,7 +1,7 @@
 <a href="{% url 'home' %}">
     <h1>Logo</h1>
 </a>
-<hr>
+<p>Hello, {{ request.user.username|title }}</p>
 <div>
     <form action="{% url 'home' %}" method="get">
         <input type="text" name="q" placeholder="Search Rooms...">
@@ -14,5 +14,5 @@
     {% else %}
         <a href="{% url 'login' %}">Login</a>
     {% endif%}
-    
 </div>
+<hr>

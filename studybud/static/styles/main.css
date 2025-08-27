@@ -1,1 +1,124 @@
-/**/
+/* Dark Theme Base */
+body {
+  background-color: #1e1e2f;
+  color: #e6e6e6;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #252540 !important;
+  border-bottom: 1px solid #333;
+}
+
+.navbar .form-control {
+  background: #2f2f4f;
+  border: none;
+  color: #fff;
+}
+
+.navbar .form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00aaff;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #252540;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.sidebar h5 {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem;
+  border-radius: 6px;
+  color: #ddd;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar a:hover {
+  background: #33334d;
+  color: #00aaff;
+}
+
+.sidebar .btn {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+/* Room Cards */
+.card-room {
+  background: #2b2b44;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  transition: 0.2s;
+}
+
+.card-room:hover {
+  border-color: #00aaff;
+  transform: translateY(-2px);
+}
+
+.card-room .room-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.card-room .room-header .host {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+.tag {
+  background: #3d3d5c;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Right Panel */
+.right-panel .card {
+  background: #252540;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+}
+
+.right-panel h5 {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.btn-follow {
+  background: #00aaff;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.btn-follow:hover {
+  background: #008ecc;
+}
+
+/* Recent Activities */
+.activity {
+  background: #2b2b44;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
